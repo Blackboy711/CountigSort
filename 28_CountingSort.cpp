@@ -4,7 +4,7 @@
 using namespace std;
 void fillArr(int** arr, int n, int m) {
     for (int i = 0; i < n; i++) {
-        for (int j = 0; j < m; j++) {//заповнення матриці будь-0якими числами
+        for (int j = 0; j < m; j++) {
             arr[i][j] = rand() % 10;
         }
     }
@@ -13,7 +13,7 @@ int findMax(int arr[], int size) {
     int max_val = arr[0];
     for (int i = 1; i < size; i++) {
         if (arr[i] > max_val) {
-            max_val = arr[i];//Нахождение максимально числа 
+            max_val = arr[i];
         }
     }
     return max_val;
@@ -26,7 +26,7 @@ void countingSortRow(int arr[], int size) {
         count[arr[i]]++;
     }
     for (int i = 1; i <= max_val; i++) {
-        count[i] += count[i - 1];//Кумулятивна сума 
+        count[i] += count[i - 1];
     }
     for (int i = size - 1; i >= 0; i--) {
         output[count[arr[i]] - 1] = arr[i];
@@ -42,7 +42,7 @@ void one(int** Arr, int n, int m, int* arr) {
     int k = 0;
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
-            arr[k++] = Arr[i][j];//В одновимірний массив 
+            arr[k++] = Arr[i][j];
         }
     }
 }
@@ -50,20 +50,20 @@ void doublee(int** Arr, int n, int m, int* arr) {
     int k = 0;
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
-            Arr[i][j] = arr[k++];//В матрицю
+            Arr[i][j] = arr[k++];
         }
     }
 }
 void sortRows(int** Arr, int n, int m) {
     for (int i = 0; i < n; i++) {
-        countingSortRow(Arr[i], m);//сортуються саме рядки 
+        countingSortRow(Arr[i], m);
     }
 }
 void showArr(int** arr, int n, int m) {
     for (int i = 0; i < n; i++) {
         cout << endl;
         for (int j = 0; j < m; j++) {
-            cout << arr[i][j] << ' ';//вивід матриці 
+            cout << arr[i][j] << ' ';
         }
     }
     cout << endl;
